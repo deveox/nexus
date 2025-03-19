@@ -59,10 +59,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/deveox/regula.git"
+    "url": "https://github.com/deveox/nexus.git"
   },
   "bugs": {
-    "url": "https://github.com/deveox/regula/issues"
+    "url": "https://github.com/deveox/nexus/issues"
   },
-  "homepage": "https://github.com/deveox/regula#readme"
+  "homepage": "https://github.com/deveox/nexus#readme"
 }

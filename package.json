@@ -1,5 +1,5 @@
 {
-  "name": "regula-monorepo",
+  "name": "nexus-monorepo",
   "private": true,
   "workspaces": [
     "packages/*"

@@ -1,6 +1,6 @@
-# Contributing to Regula
+# Contributing to Nexus
 
-Thank you for considering contributing to Regula! This document outlines the process for contributing to the project and how to use our commit message guidelines to ensure automated versioning works correctly.
+Thank you for considering contributing to Nexus! This document outlines the process for contributing to the project and how to use our commit message guidelines to ensure automated versioning works correctly.
 
 ## Development Setup
 
