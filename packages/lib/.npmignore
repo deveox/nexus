@@ -1,0 +1,28 @@
+# Source
+src/
+tests/
+
+# Configuration files
+tsconfig.json
+tsconfig.build.json
+.npmignore
+.gitignore
+biome.jsonc
+build.js
+
+# Development files
+*.test.ts
+*.spec.ts
+*.test.js
+*.spec.js
+.vscode/
+
+# IDE files
+.idea/
+.vs/
+
+# Build artifacts that shouldn't be published
+*.tsbuildinfo
+
+# Docs
+docs/

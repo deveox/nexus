@@ -1,0 +1,10 @@
+{
+  "name": "regula-monorepo",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "trustedDependencies": [
+    "@biomejs/biome"
+  ]
+}

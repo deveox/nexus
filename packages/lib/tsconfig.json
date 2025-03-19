@@ -1,0 +1,39 @@
+/* Visit https://aka.ms/tsconfig to read more about this file */
+{
+    "include": [
+        "src/**/*.ts",
+    ],
+    "exclude": [
+        "node_modules"
+    ],
+    "compilerOptions": {
+        "baseUrl": ".",
+        "outDir": "./dist",
+        "target": "ES2023",
+        "lib": [
+            "ES2023"
+        ],
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "moduleDetection": "force",
+        "module": "Node16",
+        "moduleResolution": "Node16",
+        "allowJs": false,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "strictNullChecks": true,
+        "strictBindCallApply": true,
+        "useUnknownInCatchVariables": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "noImplicitOverride": true,
+        "skipLibCheck": true,
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ],
+        },
+    }
+}

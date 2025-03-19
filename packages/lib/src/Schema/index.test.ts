@@ -1,0 +1,22 @@
+import { describe } from 'bun:test'
+describe('Schema', async () => {
+  await import('./TUnknown.test.js')
+  await import('./TUndefined.test.js')
+  await import('./TNumber.test.js')
+  await import('./TString.test.js')
+  await import('./TBoolean.test.js')
+  await import('./TEnum.test.js')
+  await import('./TDate.test.js')
+  await import('./TBuffer.test.js')
+  await import('./TObjectId.test.js')
+  await import('./TObject.test.js')
+  await import('./TArray.test.js')
+  await import('./TUnion.test.js')
+  await import('./TRecord.test.js')
+  await import('./TMap.test.js')
+  await import('./TSet.test.js')
+
+  await import('./EOptional.test.js')
+  await import('./EDefault.test.js')
+  await import('./EScoped.test.js')
+})
