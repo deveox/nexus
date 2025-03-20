@@ -1,0 +1,81 @@
+name: Deploy Docs
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "packages/docs/**"
+      - ".github/workflows/deploy-docs.yml"
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy Docs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "18"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: |
+          cd packages/docs
+          npm ci
+
+      - name: Build static site
+        run: |
+          cd packages/docs
+          npm run generate
+
+      - name: Install SSH key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: ${{ secrets.SSH_KNOWN_HOSTS }}
+          if_key_exists: replace
+
+      - name: Deploy to DigitalOcean
+        run: |
+          # Create tmp directory for deployment
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "mkdir -p /tmp/nexus-docs-deploy"
+
+          # Copy the built static files
+          scp -r packages/docs/.output/public/* ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/nexus-docs-deploy/
+
+          # Copy the Nginx configuration
+          scp packages/docs/nginx/nexus.conf ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }}:/tmp/nexus-docs-deploy/
+
+          # Execute deployment script on server
+          ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "bash -s" << 'ENDSSH'
+            # Check if nginx is installed
+            if ! command -v nginx &> /dev/null; then
+              echo "Nginx not found, installing..."
+              sudo apt-get update
+              sudo apt-get install -y nginx
+            fi
+
+            # Move nginx config to the correct location
+            sudo mv /tmp/nexus-docs-deploy/nexus.conf /etc/nginx/conf.d/nexus.conf
+
+            # Create or update the web directory
+            sudo mkdir -p /var/www/nexus.deveox.com
+            sudo rm -rf /var/www/nexus.deveox.com/*
+            sudo mv /tmp/nexus-docs-deploy/* /var/www/nexus.deveox.com/
+
+            # Set proper permissions
+            sudo chown -R www-data:www-data /var/www/nexus.deveox.com
+
+            # Test Nginx configuration
+            sudo nginx -t
+
+            # Reload Nginx to apply changes
+            sudo systemctl reload nginx
+
+            # Clean up temporary directory
+            rm -rf /tmp/nexus-docs-deploy
+          ENDSSH
