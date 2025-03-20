@@ -54,13 +54,6 @@ jobs:
 
           # Execute deployment script on server
           ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} "bash -s" << 'ENDSSH'
-            # Check if nginx is installed
-            if ! command -v nginx &> /dev/null; then
-              echo "Nginx not found, installing..."
-              sudo apt-get update
-              sudo apt-get install -y nginx
-            fi
-
             # Move nginx config to the correct location
             sudo mv /tmp/nexus-docs-deploy/nexus.conf /etc/nginx/conf.d/nexus.conf
 

@@ -14,7 +14,7 @@ export default defineAppConfig({
     }
   },
   seo: {
-    siteName: 'Nuxt UI Pro - Docs template'
+    siteName: 'Nexus - TypeScript ORM'
   },
   header: {
     title: '',
@@ -52,7 +52,7 @@ export default defineAppConfig({
     title: 'Table of Contents',
     bottom: {
       title: 'Community',
-      edit: 'https://github.com/deveox/nexus/packages/docs/edit/main/content',
+      edit: 'https://github.com/deveox/nexus/tree/main/packages/docs/content',
       links: [{
         icon: 'i-lucide-star',
         label: 'Star on GitHub',
