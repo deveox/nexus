@@ -28,6 +28,8 @@ jobs:
           npm ci
 
       - name: Build static site
+        env:
+          NUXT_UI_PRO_LICENSE: ${{ secrets.NUXT_UI_PRO_LICENSE }}
         run: |
           cd packages/docs
           npm run generate
