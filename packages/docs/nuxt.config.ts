@@ -6,7 +6,8 @@ export default defineNuxtConfig({
     '@nuxt/ui-pro',
     '@nuxt/content',
     'nuxt-og-image',
-    'nuxt-llms'
+    'nuxt-llms',
+    'nuxt-gtag',
   ],
 
   devtools: {
@@ -77,5 +78,8 @@ export default defineNuxtConfig({
         ]
       }
     ]
-  }
+  },
+  gtag: {
+    id: 'G-HEZNGSRPG5'
+  },
 })
