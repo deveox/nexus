@@ -1,7 +1,7 @@
 export default defineAppConfig({
   ui: {
     colors: {
-      primary: 'green',
+      primary: 'blue',
       neutral: 'slate'
     }
   },
@@ -37,7 +37,7 @@ export default defineAppConfig({
     credits: `Copyright © ${new Date().getFullYear()}`,
     colorMode: false,
     links: [{
-      'icon': 'i-simple-icons-nuxtdotjs',
+      'icon': 'i-lucide-home',
       'to': 'https://nexus.deveox.com',
       'target': '_blank',
       'aria-label': 'Nexus Website'

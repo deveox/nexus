@@ -39,7 +39,7 @@ Nexus is a type-safe ORM that puts your application logic first, letting you mod
 
 ::
 
-::u-page-section{style="background: #141d31;"}
+::u-page-section{style="background: light-dark(#fafafa, #141d31);"}
 #title
 Supercharged with Features
 

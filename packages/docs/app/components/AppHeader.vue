@@ -46,8 +46,9 @@ const { header } = useAppConfig()
       v-else
       #left
     >
-      <NuxtLink :to="header?.to || '/'" class="font-bold text-3xl flex items-center gap-2">
-        NexuS <span class="bg-green-700 text-green-100 py-1.5 px-3 text-xs rounded-md">BETA</span>
+      <NuxtLink :to="header?.to || '/'" class="font-bold text-3xl flex items-center gap-4">
+        <NuxtImg src="/logo.svg" class="h-8"></NuxtImg>
+         <span class="bg-primary-500 text-green-100 py-1 px-2 text-xs rounded-md">BETA</span>
       </NuxtLink>
 
     </template>

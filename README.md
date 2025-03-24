@@ -1,4 +1,11 @@
-# Nexus ORM
+<div align="center">
+  <a href="https://nexus.deveox.com/">
+    <picture>
+        <img height="80" width="auto" alt="TypeORM Logo" src="https://github.com/deveox/nexus/raw/main/packages/docs/public/logo.svg">
+    </picture>
+  </a>
+</div>
+
 
 ![npm](https://img.shields.io/npm/v/@deveox/nexus)
 ![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/deveox/nexus/publish-lib.yml)
