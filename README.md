@@ -4,13 +4,15 @@
         <img height="80" width="auto" alt="TypeORM Logo" src="https://github.com/deveox/nexus/raw/main/packages/docs/public/logo.svg">
     </picture>
   </a>
+  <br /><br/>
+  <img src="https://img.shields.io/github/actions/workflow/status/deveox/nexus/publish-lib.yml" alt="GitHub Workflow Status" />
+  <img src="https://img.shields.io/npm/l/@deveox/nexus" alt="License" />
+  <img src="https://img.shields.io/npm/v/@deveox/nexus" alt="npm version" />
+  <img src="https://img.shields.io/npm/dt/@deveox/nexus" alt="npm downloads" />
+  <br />
+  <br />
 </div>
 
-
-![npm](https://img.shields.io/npm/v/@deveox/nexus)
-![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/deveox/nexus/publish-lib.yml)
-![License](https://img.shields.io/npm/l/@deveox/nexus)
-![npm downloads](https://img.shields.io/npm/dt/@deveox/nexus)
 
 Nexus is a database-agnostic TypeScript ORM with an emphasis on strong type-safety and simplicity. It puts your application logic first, letting you model your domain naturally while seamlessly connecting to your database of choice.
 
